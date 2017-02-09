@@ -46,9 +46,11 @@ const app = new Vue({
             this.usersInRoom = users;
         })
         .joining(user => {
-            console.log(user.name);
+            this.usersInRoom.push(user);
         })
-        // .leaving()
+        .leaving(user => {
+            this.usersInRoom = this.usersInRoom.filter(u => u != user);
+        })
         .listen('MessagePosted', e => {
             // handle event here
             console.log("hello");

@@ -11575,10 +11575,12 @@ var app = new Vue({
             console.log(users);
             _this.usersInRoom = users;
         }).joining(function (user) {
-            console.log(user.name);
-        })
-        // .leaving()
-        .listen('MessagePosted', function (e) {
+            _this.usersInRoom.push(user);
+        }).leaving(function (user) {
+            _this.usersInRoom = _this.usersInRoom.filter(function (u) {
+                return u != user;
+            });
+        }).listen('MessagePosted', function (e) {
             // handle event here
             console.log("hello");
             console.log(e);

@@ -8,7 +8,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                         Chat Room
-                        <span class="badge">@{{ usersInRoom.length }}<span>
+                        <span class="badge pull-right">@{{ usersInRoom.length }}<span>
                         </div>
 
                         <div class="panel-body" style="padding: 0;">
